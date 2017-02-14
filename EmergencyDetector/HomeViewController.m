@@ -7,8 +7,9 @@
 //
 
 #import "HomeViewController.h"
-
-@interface HomeViewController ()
+#import <WatchConnectivity/WatchConnectivity.h>
+#import "AlertViewController.h"
+@interface HomeViewController ()<WCSessionDelegate>
 
 @end
 
@@ -16,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
     // Do any additional setup after loading the view.
 }
 
@@ -23,7 +29,45 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)moveToAlert:(NSString *)alertType
+{
+    AlertViewController * alert = [self.storyboard instantiateViewControllerWithIdentifier:@"AlertViewController"];
+    alert.alertType = alertType;
+    [self presentViewController:alert animated:YES completion:nil];
 
+}
+- (IBAction)emergencyAlertGenerated:(id)sender
+{
+    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
+                               replyHandler:^(NSDictionary *reply) {
+                                   
+                               }
+                               errorHandler:^(NSError *error) {
+                                   
+                               }
+     ];
+    [self moveToAlert:@"Emergency"];
+}
+- (IBAction)silentAlertGenerated:(id)sender
+{
+    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
+                               replyHandler:^(NSDictionary *reply) {
+                                   
+                               }
+                               errorHandler:^(NSError *error) {
+                                   
+                               }
+     ];
+     [self moveToAlert:@"Silent"];
+}
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+{
+    [self moveToAlert:message[@"alertType"]];
+}
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
+{
+    NSLog(@"%ld",(long)activationState);
+}
 /*
 #pragma mark - Navigation
 

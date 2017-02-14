@@ -7,8 +7,8 @@
 //
 
 #import "HomeInterfaceController.h"
-
-@interface HomeInterfaceController ()
+#import <WatchConnectivity/WatchConnectivity.h>
+@interface HomeInterfaceController ()<WCSessionDelegate>
 
 @end
 
@@ -23,6 +23,11 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 - (void)didDeactivate {
@@ -30,6 +35,48 @@
     [super didDeactivate];
 }
 
+- (IBAction)emergencyAlertClicked
+{
+    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
+                               replyHandler:^(NSDictionary *reply) {
+                                   
+                               }
+                               errorHandler:^(NSError *error) {
+                                  
+                               }
+     ];
+    [self moveToAlert:@"Emergency"];
+    }
+
+
+- (IBAction)silentAlertClicked
+{
+    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
+                               replyHandler:^(NSDictionary *reply) {
+                                   
+                               }
+                               errorHandler:^(NSError *error) {
+                                   
+                               }
+     ];
+    [self moveToAlert:@"Silent"];
+    
+}
+
+-(void)moveToAlert:(NSString *)alertType
+{
+  [self presentControllerWithName:@"Alert" context:alertType];
+}
+
+
+-(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
+{
+    NSLog(@"%ld",(long)activationState);
+}
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+{
+    [self moveToAlert:message[@"alertType"]];
+}
 @end
 
 

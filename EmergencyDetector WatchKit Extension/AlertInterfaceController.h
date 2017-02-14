@@ -11,4 +11,6 @@
 
 @interface AlertInterfaceController : WKInterfaceController
 
+@property(nonatomic,weak) IBOutlet WKInterfaceLabel *alertTypeLbl;
+
 @end

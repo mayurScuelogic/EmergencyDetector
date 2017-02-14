@@ -9,13 +9,21 @@
 #import "AlertInterfaceController.h"
 
 @interface AlertInterfaceController ()
+{
 
+    
+    
+    
+   
+    NSString *alertType;
+}
 @end
 
 @implementation AlertInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    alertType = [NSString stringWithString:context];
     
     // Configure interface objects here.
 }
@@ -23,6 +31,9 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+   [_alertTypeLbl setText:alertType];
+    
 }
 
 - (void)didDeactivate {

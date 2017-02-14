@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AlertViewController : UIViewController
-
+@property(nonatomic,strong)NSString *alertType;
 @end

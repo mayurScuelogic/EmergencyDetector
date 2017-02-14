@@ -1,16 +1,65 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Home Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="HomeInterfaceController">
+                    <items>
+                        <group width="135" height="145" alignment="left" layout="vertical" spacing="20" id="0xU-yS-mq5">
+                            <items>
+                                <button width="94" alignment="left" title="Emergency" id="Dpq-NJ-rxB">
+                                    <connections>
+                                        <action selector="emergencyAlertClicked" destination="AgC-eL-Hgc" id="eOP-XK-NwP"/>
+                                    </connections>
+                                </button>
+                                <button width="94" alignment="left" title="Silent" id="c3q-HN-agS">
+                                    <connections>
+                                        <action selector="silentAlertClicked" destination="AgC-eL-Hgc" id="0Yj-e8-hdD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="20" right="10" top="20" bottom="0.0"/>
+                        </group>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="100" y="303"/>
+        </scene>
+        <!--Alert-->
+        <scene sceneID="sT5-yc-3jK">
+            <objects>
+                <controller identifier="Alert" id="8v7-TW-eff" customClass="AlertInterfaceController">
+                    <items>
+                        <group width="1" height="40" alignment="left" layout="vertical" spacing="20" id="gfW-AH-rho">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="ppw-3k-Fol">
+                                    <accessibilityTraits key="accessibilityTraits" none="YES"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="10" bottom="0.0"/>
+                        </group>
+                        <group width="1" height="105" alignment="left" id="nYq-Ur-X5D">
+                            <items>
+                                <label alignment="left" text="Alert Generated" textAlignment="center" numberOfLines="0" id="DDi-5z-FS4"/>
+                            </items>
+                            <edgeInsets key="margins" left="30" right="25" top="20" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="alertTypeLbl" destination="ppw-3k-Fol" id="sLQ-2E-Jes"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="364" y="303"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +80,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

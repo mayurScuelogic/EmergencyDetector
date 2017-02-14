@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EB0F830B1E52D3F90045C119 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F830A1E52D3F90045C119 /* main.m */; };
 		EB0F830E1E52D3F90045C119 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F830D1E52D3F90045C119 /* AppDelegate.m */; };
-		EB0F83111E52D3F90045C119 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F83101E52D3F90045C119 /* ViewController.m */; };
 		EB0F83141E52D3F90045C119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83121E52D3F90045C119 /* Main.storyboard */; };
 		EB0F83161E52D3F90045C119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83151E52D3F90045C119 /* Assets.xcassets */; };
 		EB0F83191E52D3F90045C119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83171E52D3F90045C119 /* LaunchScreen.storyboard */; };
@@ -19,10 +18,13 @@
 		EB0F833A1E52D3FA0045C119 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83381E52D3FA0045C119 /* Interface.storyboard */; };
 		EB0F833C1E52D3FA0045C119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F833B1E52D3FA0045C119 /* Assets.xcassets */; };
 		EB0F83431E52D3FA0045C119 /* EmergencyDetector WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB0F83421E52D3FA0045C119 /* EmergencyDetector WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		EB0F834B1E52D3FA0045C119 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F834A1E52D3FA0045C119 /* InterfaceController.m */; };
 		EB0F834E1E52D3FA0045C119 /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F834D1E52D3FA0045C119 /* ExtensionDelegate.m */; };
 		EB0F83511E52D3FA0045C119 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F83501E52D3FA0045C119 /* NotificationController.m */; };
 		EB0F83531E52D3FA0045C119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83521E52D3FA0045C119 /* Assets.xcassets */; };
+		EB0F836A1E52DCF60045C119 /* AlertInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */; };
+		EB0F836D1E52DD380045C119 /* HomeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F836C1E52DD380045C119 /* HomeInterfaceController.m */; };
+		EB0F83701E530D7F0045C119 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F836F1E530D7F0045C119 /* HomeViewController.m */; };
+		EB0F83731E530D8F0045C119 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F83721E530D8F0045C119 /* AlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +88,6 @@
 		EB0F830A1E52D3F90045C119 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB0F830C1E52D3F90045C119 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB0F830D1E52D3F90045C119 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB0F830F1E52D3F90045C119 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EB0F83101E52D3F90045C119 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EB0F83131E52D3F90045C119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB0F83151E52D3F90045C119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB0F83181E52D3F90045C119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,14 +104,20 @@
 		EB0F833D1E52D3FA0045C119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0F83421E52D3FA0045C119 /* EmergencyDetector WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EmergencyDetector WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0F83481E52D3FA0045C119 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		EB0F83491E52D3FA0045C119 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		EB0F834A1E52D3FA0045C119 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		EB0F834C1E52D3FA0045C119 /* ExtensionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionDelegate.h; sourceTree = "<group>"; };
 		EB0F834D1E52D3FA0045C119 /* ExtensionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtensionDelegate.m; sourceTree = "<group>"; };
 		EB0F834F1E52D3FA0045C119 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		EB0F83501E52D3FA0045C119 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		EB0F83521E52D3FA0045C119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB0F83541E52D3FA0045C119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB0F83681E52DCF60045C119 /* AlertInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertInterfaceController.h; sourceTree = "<group>"; };
+		EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertInterfaceController.m; sourceTree = "<group>"; };
+		EB0F836B1E52DD380045C119 /* HomeInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInterfaceController.h; sourceTree = "<group>"; };
+		EB0F836C1E52DD380045C119 /* HomeInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeInterfaceController.m; sourceTree = "<group>"; };
+		EB0F836E1E530D7F0045C119 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		EB0F836F1E530D7F0045C119 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		EB0F83711E530D8F0045C119 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		EB0F83721E530D8F0045C119 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +181,11 @@
 			children = (
 				EB0F830C1E52D3F90045C119 /* AppDelegate.h */,
 				EB0F830D1E52D3F90045C119 /* AppDelegate.m */,
-				EB0F830F1E52D3F90045C119 /* ViewController.h */,
-				EB0F83101E52D3F90045C119 /* ViewController.m */,
 				EB0F83121E52D3F90045C119 /* Main.storyboard */,
+				EB0F836E1E530D7F0045C119 /* HomeViewController.h */,
+				EB0F836F1E530D7F0045C119 /* HomeViewController.m */,
+				EB0F83711E530D8F0045C119 /* AlertViewController.h */,
+				EB0F83721E530D8F0045C119 /* AlertViewController.m */,
 				EB0F83151E52D3F90045C119 /* Assets.xcassets */,
 				EB0F83171E52D3F90045C119 /* LaunchScreen.storyboard */,
 				EB0F831A1E52D3F90045C119 /* Info.plist */,
@@ -225,8 +233,10 @@
 		EB0F83461E52D3FA0045C119 /* EmergencyDetector WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				EB0F83491E52D3FA0045C119 /* InterfaceController.h */,
-				EB0F834A1E52D3FA0045C119 /* InterfaceController.m */,
+				EB0F83681E52DCF60045C119 /* AlertInterfaceController.h */,
+				EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */,
+				EB0F836B1E52DD380045C119 /* HomeInterfaceController.h */,
+				EB0F836C1E52DD380045C119 /* HomeInterfaceController.m */,
 				EB0F834C1E52D3FA0045C119 /* ExtensionDelegate.h */,
 				EB0F834D1E52D3FA0045C119 /* ExtensionDelegate.m */,
 				EB0F834F1E52D3FA0045C119 /* NotificationController.h */,
@@ -442,9 +452,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0F83111E52D3F90045C119 /* ViewController.m in Sources */,
 				EB0F830E1E52D3F90045C119 /* AppDelegate.m in Sources */,
 				EB0F830B1E52D3F90045C119 /* main.m in Sources */,
+				EB0F83701E530D7F0045C119 /* HomeViewController.m in Sources */,
+				EB0F83731E530D8F0045C119 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +480,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0F834E1E52D3FA0045C119 /* ExtensionDelegate.m in Sources */,
-				EB0F834B1E52D3FA0045C119 /* InterfaceController.m in Sources */,
+				EB0F836A1E52DCF60045C119 /* AlertInterfaceController.m in Sources */,
+				EB0F836D1E52DD380045C119 /* HomeInterfaceController.m in Sources */,
 				EB0F83511E52D3FA0045C119 /* NotificationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
