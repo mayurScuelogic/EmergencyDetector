@@ -1,24 +1,22 @@
 //
-//  InterfaceController.m
-//  EmergencyDetector WatchKit Extension
+//  AlertInterfaceController.m
+//  EmergencyDetector
 //
 //  Created by Cuelogic on 14/02/17.
 //  Copyright © 2017 Com. All rights reserved.
 //
 
-#import "InterfaceController.h"
+#import "AlertInterfaceController.h"
 
-
-@interface InterfaceController()
+@interface AlertInterfaceController ()
 
 @end
 
-
-@implementation InterfaceController
+@implementation AlertInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
-
+    
     // Configure interface objects here.
 }
 
