@@ -7,9 +7,9 @@
 //
 
 #import "HomeInterfaceController.h"
-#import <WatchConnectivity/WatchConnectivity.h>
-@interface HomeInterfaceController ()<WCSessionDelegate>
 
+
+@interface HomeInterfaceController ()
 @end
 
 @implementation HomeInterfaceController
@@ -23,11 +23,20 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
+    
+    
+//    CMMotionManager *motionMgr = [[CMMotionManager alloc] init];
+//    NSString *status = @"";
+//    if([motionMgr isAccelerometerAvailable])
+//        status = [status stringByAppendingString:@"A"];
+//    if([motionMgr isGyroAvailable])
+//        status = [status stringByAppendingString:@"G"];
+//    if([motionMgr isMagnetometerAvailable])
+//        status = [status stringByAppendingString:@"M"];
+//    if([motionMgr isDeviceMotionAvailable])
+//        status = [status stringByAppendingString:@"D"];
+//    
+//    [self.statusLbl setText:status];
 }
 
 - (void)didDeactivate {
@@ -37,28 +46,34 @@
 
 - (IBAction)emergencyAlertClicked
 {
-    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
-                               replyHandler:^(NSDictionary *reply) {
-                                   
-                               }
-                               errorHandler:^(NSError *error) {
-                                  
-                               }
-     ];
+//    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
+//                               replyHandler:^(NSDictionary *reply) {
+//                                   
+//                               }
+//                               errorHandler:^(NSError *error) {
+//                                  
+//                               }
+//     ];
+    NSDictionary *applicationDict = @{@"alertType":@"Emergency"};
+   // [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
+   [[WCSession defaultSession] transferUserInfo:applicationDict];
     [self moveToAlert:@"Emergency"];
     }
 
 
 - (IBAction)silentAlertClicked
 {
-    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
-                               replyHandler:^(NSDictionary *reply) {
-                                   
-                               }
-                               errorHandler:^(NSError *error) {
-                                   
-                               }
-     ];
+//    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
+//                               replyHandler:^(NSDictionary *reply) {
+//                                   
+//                               }
+//                               errorHandler:^(NSError *error) {
+//                                   
+//                               }
+//     ];
+    NSDictionary *applicationDict = @{@"alertType":@"Silent"};
+ //   [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
+    [[WCSession defaultSession] transferUserInfo:applicationDict];
     [self moveToAlert:@"Silent"];
     
 }
@@ -69,14 +84,17 @@
 }
 
 
--(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
-{
-    NSLog(@"%ld",(long)activationState);
-}
--(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
-{
-    [self moveToAlert:message[@"alertType"]];
-}
+
+//-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext
+//{
+//    NSLog(@"Through Update Context");
+//     [self moveToAlert:applicationContext[@"alertType"]];
+//}
+//-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+//{
+//    NSLog(@"Through Message");
+//    [self moveToAlert:message[@"alertType"]];
+//}
 @end
 
 

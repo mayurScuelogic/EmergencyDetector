@@ -8,7 +8,10 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <WatchConnectivity/WatchConnectivity.h>
+#import <CoreMotion/CoreMotion.h>
 
 @interface HomeInterfaceController : WKInterfaceController
+@property(nonatomic,weak) IBOutlet WKInterfaceLabel *statusLbl;
 
 @end

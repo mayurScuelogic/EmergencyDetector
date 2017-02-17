@@ -8,21 +8,26 @@
 
 #import "HomeViewController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
+#import <CoreLocation/CoreLocation.h>
 #import "AlertViewController.h"
-@interface HomeViewController ()<WCSessionDelegate>
-
+@import UserNotifications;
+@interface HomeViewController ()<CLLocationManagerDelegate>
+{
+    CLLocationManager *locManager;
+}
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if ([WCSession isSupported]) {
-        WCSession *session = [WCSession defaultSession];
-        session.delegate = self;
-        [session activateSession];
-    }
-    // Do any additional setup after loading the view.
+    locManager = [[CLLocationManager alloc]init];
+    [locManager setDelegate:self];
+    [locManager requestAlwaysAuthorization];
+    [locManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    [locManager setAllowsBackgroundLocationUpdates:YES];
+    [locManager startUpdatingLocation];
+        // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,35 +43,30 @@
 }
 - (IBAction)emergencyAlertGenerated:(id)sender
 {
-    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
-                               replyHandler:^(NSDictionary *reply) {
-                                   
-                               }
-                               errorHandler:^(NSError *error) {
-                                   
-                               }
-     ];
+//    if ([[WCSession defaultSession] isReachable]) {
+//    NSDictionary *applicationDict = @{@"alertType":@"Emergency"};
+//    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
+//                               replyHandler:^(NSDictionary *reply) {
+//                                   
+//                               }
+//                               errorHandler:^(NSError *error){
+//                                [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
+//                               }
+//     ];
+//    }
+    NSDictionary *applicationDict = @{@"alertType":@"Emergency"};
+     [[WCSession defaultSession] transferUserInfo:applicationDict];
     [self moveToAlert:@"Emergency"];
 }
 - (IBAction)silentAlertGenerated:(id)sender
 {
-    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
-                               replyHandler:^(NSDictionary *reply) {
-                                   
-                               }
-                               errorHandler:^(NSError *error) {
-                                   
-                               }
-     ];
+    NSDictionary *applicationDict = @{@"alertType":@"Silent"};
+    [[WCSession defaultSession] transferUserInfo:applicationDict];
      [self moveToAlert:@"Silent"];
 }
--(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-    [self moveToAlert:message[@"alertType"]];
-}
--(void)session:(WCSession *)session activationDidCompleteWithState:(WCSessionActivationState)activationState error:(NSError *)error
-{
-    NSLog(@"%ld",(long)activationState);
+    NSLog(@"%@",[locations lastObject]);
 }
 /*
 #pragma mark - Navigation

@@ -10,12 +10,7 @@
 
 @interface AlertInterfaceController ()
 {
-
-    
-    
-    
-   
-    NSString *alertType;
+     NSString *alertType;
 }
 @end
 
