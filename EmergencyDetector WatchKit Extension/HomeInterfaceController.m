@@ -23,22 +23,31 @@
 - (void)willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
-    
-    
-//    CMMotionManager *motionMgr = [[CMMotionManager alloc] init];
-//    NSString *status = @"";
-//    if([motionMgr isAccelerometerAvailable])
-//        status = [status stringByAppendingString:@"A"];
-//    if([motionMgr isGyroAvailable])
-//        status = [status stringByAppendingString:@"G"];
-//    if([motionMgr isMagnetometerAvailable])
-//        status = [status stringByAppendingString:@"M"];
-//    if([motionMgr isDeviceMotionAvailable])
-//        status = [status stringByAppendingString:@"D"];
-//    
-//    [self.statusLbl setText:status];
+   // [self checkHardwareAvailablability];
 }
-
+//-(void)checkHardwareAvailablability
+//{
+//    _motionMgr = [[CMMotionManager alloc] init];
+//    if ([_motionMgr isDeviceMotionAvailable]) {
+//        _motionMgr.showsDeviceMovementDisplay = YES;
+//        _motionMgr.deviceMotionUpdateInterval = 0.01;
+//        [_motionMgr startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error)
+//         {
+//             double accelerationX = motion.gravity.x + motion.userAcceleration.x;
+//             double accelerationY = motion.gravity.y + motion.userAcceleration.y;
+//             double accelerationZ = motion.gravity.z + motion.userAcceleration.z;
+//             double totalAcceleration = sqrt((accelerationX * accelerationX) + (accelerationY * accelerationY) + (accelerationZ * accelerationZ));
+//             
+//             if (totalAcceleration > 6.0) {
+//                 NSLog(@"Free Fall");
+//             }
+//             else
+//             {
+//                 NSLog(@"Value = %f",totalAcceleration);
+//             }
+//         }];
+//    }
+//}
 - (void)didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
@@ -63,14 +72,7 @@
 
 - (IBAction)silentAlertClicked
 {
-//    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Silent"}
-//                               replyHandler:^(NSDictionary *reply) {
-//                                   
-//                               }
-//                               errorHandler:^(NSError *error) {
-//                                   
-//                               }
-//     ];
+
     NSDictionary *applicationDict = @{@"alertType":@"Silent"};
  //   [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
     [[WCSession defaultSession] transferUserInfo:applicationDict];
@@ -83,18 +85,6 @@
   [self presentControllerWithName:@"Alert" context:alertType];
 }
 
-
-
-//-(void)session:(WCSession *)session didReceiveApplicationContext:(NSDictionary<NSString *,id> *)applicationContext
-//{
-//    NSLog(@"Through Update Context");
-//     [self moveToAlert:applicationContext[@"alertType"]];
-//}
-//-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
-//{
-//    NSLog(@"Through Message");
-//    [self moveToAlert:message[@"alertType"]];
-//}
 @end
 
 

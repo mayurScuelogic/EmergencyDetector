@@ -9,11 +9,13 @@
 #import "HomeViewController.h"
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <CoreLocation/CoreLocation.h>
+#import  <CoreMotion/CoreMotion.h>
 #import "AlertViewController.h"
 @import UserNotifications;
 @interface HomeViewController ()<CLLocationManagerDelegate>
 {
     CLLocationManager *locManager;
+    CMMotionManager * motionMgr;
 }
 @end
 
@@ -27,10 +29,46 @@
     [locManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [locManager setAllowsBackgroundLocationUpdates:YES];
     [locManager startUpdatingLocation];
+    [self checkHardwareAvailablability];
         // Do any additional setup after loading the view.
 }
+//- (BOOL)canBecomeFirstResponder {
+//    return YES;
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    [self becomeFirstResponder];
+//}
+//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+//{
+//    NSLog(@"Motion Began %@",event);
+//}
+-(void)checkHardwareAvailablability
+{
+    motionMgr = [[CMMotionManager alloc] init];
+    if ([motionMgr isDeviceMotionAvailable]) {
+    motionMgr.showsDeviceMovementDisplay = YES;
+    motionMgr.deviceMotionUpdateInterval = 0.01;
+    [motionMgr startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error)
+        {
+            double accelerationX = motion.gravity.x + motion.userAcceleration.x;
+            double accelerationY = motion.gravity.y + motion.userAcceleration.y;
+            double accelerationZ = motion.gravity.z + motion.userAcceleration.z;
+            double totalAcceleration = sqrt((accelerationX * accelerationX) + (accelerationY * accelerationY) + (accelerationZ * accelerationZ));
+            
+            if (totalAcceleration > 4.0) {
+                NSLog(@"Free Fall");
+            }
+            else
+            {
+                NSLog(@"Value = %f",totalAcceleration);
+            }
+    }];
+    }
 
-- (void)didReceiveMemoryWarning {
+}
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -66,7 +104,7 @@
 }
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-    NSLog(@"%@",[locations lastObject]);
+    //NSLog(@"%@",[locations lastObject]);
 }
 /*
 #pragma mark - Navigation

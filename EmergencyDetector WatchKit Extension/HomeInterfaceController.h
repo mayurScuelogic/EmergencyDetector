@@ -13,5 +13,6 @@
 
 @interface HomeInterfaceController : WKInterfaceController
 @property(nonatomic,weak) IBOutlet WKInterfaceLabel *statusLbl;
+@property(nonatomic,strong)CMMotionManager * motionMgr;
 
 @end
