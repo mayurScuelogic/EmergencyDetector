@@ -29,21 +29,9 @@
     [locManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [locManager setAllowsBackgroundLocationUpdates:YES];
     [locManager startUpdatingLocation];
-    [self checkHardwareAvailablability];
+   // [self checkHardwareAvailablability];
         // Do any additional setup after loading the view.
 }
-//- (BOOL)canBecomeFirstResponder {
-//    return YES;
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    [self becomeFirstResponder];
-//}
-//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
-//{
-//    NSLog(@"Motion Began %@",event);
-//}
 -(void)checkHardwareAvailablability
 {
     motionMgr = [[CMMotionManager alloc] init];
@@ -81,17 +69,6 @@
 }
 - (IBAction)emergencyAlertGenerated:(id)sender
 {
-//    if ([[WCSession defaultSession] isReachable]) {
-//    NSDictionary *applicationDict = @{@"alertType":@"Emergency"};
-//    [[WCSession defaultSession] sendMessage:@{@"alertType":@"Emergency"}
-//                               replyHandler:^(NSDictionary *reply) {
-//                                   
-//                               }
-//                               errorHandler:^(NSError *error){
-//                                [[WCSession defaultSession] updateApplicationContext:applicationDict error:nil];
-//                               }
-//     ];
-//    }
     NSDictionary *applicationDict = @{@"alertType":@"Emergency"};
      [[WCSession defaultSession] transferUserInfo:applicationDict];
     [self moveToAlert:@"Emergency"];

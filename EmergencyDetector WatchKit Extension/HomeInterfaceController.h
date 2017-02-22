@@ -10,9 +10,10 @@
 #import <Foundation/Foundation.h>
 #import <WatchConnectivity/WatchConnectivity.h>
 #import <CoreMotion/CoreMotion.h>
+#import <HealthKit/HealthKit.h>
 
-@interface HomeInterfaceController : WKInterfaceController
-@property(nonatomic,weak) IBOutlet WKInterfaceLabel *statusLbl;
+@interface HomeInterfaceController : WKInterfaceController<HKWorkoutSessionDelegate>
 @property(nonatomic,strong)CMMotionManager * motionMgr;
+@property(nonatomic,strong)HKHealthStore *healthStore;
 
 @end

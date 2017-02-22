@@ -7,8 +7,8 @@
 //
 
 #import <WatchKit/WatchKit.h>
-#import <HealthKit/HealthKit.h>
 
-@interface ExtensionDelegate : NSObject <WKExtensionDelegate,WCSessionDelegate,HKWorkoutSessionDelegate>
+
+@interface ExtensionDelegate : NSObject <WKExtensionDelegate>
 
 @end

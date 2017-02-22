@@ -12,5 +12,6 @@
 @interface AlertInterfaceController : WKInterfaceController
 
 @property(nonatomic,weak) IBOutlet WKInterfaceLabel *alertTypeLbl;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceImage *alertImage;
 
 @end

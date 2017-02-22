@@ -13,8 +13,9 @@
             <objects>
                 <controller hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="HomeInterfaceController">
                     <items>
-                        <group width="135" height="145" alignment="left" layout="vertical" spacing="15" id="0xU-yS-mq5">
+                        <group width="135" height="145" alignment="left" layout="vertical" spacing="10" id="0xU-yS-mq5">
                             <items>
+                                <imageView width="100" height="43" alignment="center" image="loner-app-logo" id="Gw8-7A-y0C"/>
                                 <button width="94" alignment="center" title="Emergency" id="Dpq-NJ-rxB">
                                     <connections>
                                         <action selector="emergencyAlertClicked" destination="AgC-eL-Hgc" id="eOP-XK-NwP"/>
@@ -25,14 +26,10 @@
                                         <action selector="silentAlertClicked" destination="AgC-eL-Hgc" id="0Yj-e8-hdD"/>
                                     </connections>
                                 </button>
-                                <label width="87" alignment="center" text="Label" textAlignment="center" id="UQk-hE-lLx"/>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="20" bottom="0.0"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
                     </items>
-                    <connections>
-                        <outlet property="statusLbl" destination="UQk-hE-lLx" id="re2-xH-fin"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="141" y="307"/>
@@ -42,27 +39,34 @@
             <objects>
                 <controller identifier="Alert" hidesWhenLoading="NO" id="8v7-TW-eff" customClass="AlertInterfaceController">
                     <items>
-                        <group width="1" height="40" alignment="left" layout="vertical" spacing="20" id="gfW-AH-rho">
+                        <group width="1" height="80" alignment="left" layout="vertical" spacing="0.0" id="b0k-h1-9SP">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="ppw-3k-Fol">
+                                <imageView width="80" alignment="center" id="39b-RT-qlt"/>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                        </group>
+                        <group width="1" height="20" alignment="left" layout="vertical" spacing="20" id="gfW-AH-rho">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" textAlignment="center" id="ppw-3k-Fol">
                                     <accessibilityTraits key="accessibilityTraits" none="YES"/>
                                 </label>
                             </items>
-                            <edgeInsets key="margins" left="0.0" right="0.0" top="10" bottom="0.0"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
-                        <group width="1" height="105" alignment="left" id="nYq-Ur-X5D">
+                        <group width="1" height="43" alignment="left" id="nYq-Ur-X5D">
                             <items>
-                                <label alignment="left" text="Alert Generated" textAlignment="center" numberOfLines="0" id="DDi-5z-FS4"/>
+                                <label alignment="center" verticalAlignment="center" text="Alert Generated" textAlignment="center" numberOfLines="0" id="DDi-5z-FS4"/>
                             </items>
-                            <edgeInsets key="margins" left="30" right="25" top="20" bottom="0.0"/>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="10"/>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="alertImage" destination="39b-RT-qlt" id="FTq-oh-mTO"/>
                         <outlet property="alertTypeLbl" destination="ppw-3k-Fol" id="sLQ-2E-Jes"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="364" y="303"/>
+            <point key="canvasLocation" x="348" y="307"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

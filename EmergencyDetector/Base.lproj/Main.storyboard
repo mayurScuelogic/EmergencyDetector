@@ -21,29 +21,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKO-WD-I53">
-                                <rect key="frame" x="114" y="208" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKO-WD-I53">
+                                <rect key="frame" x="81" y="369" width="212" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="zeF-JO-yT8"/>
+                                </constraints>
                                 <state key="normal" title="Emergency"/>
                                 <connections>
                                     <action selector="emergencyAlertGenerated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FnP-e8-3E2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-ow-5og">
-                                <rect key="frame" x="115" y="343" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-ow-5og">
+                                <rect key="frame" x="81" y="489" width="212" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Silent"/>
                                 <connections>
                                     <action selector="silentAlertGenerated:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZJ-7e-9ng"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loner-app-logo" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-A6-d20">
+                                <rect key="frame" x="68" y="133" width="240" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="RdU-rS-zNh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8mX-ow-5og" firstAttribute="width" secondItem="QKO-WD-I53" secondAttribute="width" id="CIk-zT-RBg"/>
-                            <constraint firstItem="8mX-ow-5og" firstAttribute="top" secondItem="QKO-WD-I53" secondAttribute="bottom" constant="105" id="KY0-oM-lsS"/>
-                            <constraint firstItem="QKO-WD-I53" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="144" id="ZQY-GB-Lp2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8mX-ow-5og" secondAttribute="bottom" constant="148" id="EfB-ef-4G6"/>
+                            <constraint firstItem="iDd-A6-d20" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="G71-RB-BtR"/>
+                            <constraint firstItem="8mX-ow-5og" firstAttribute="top" secondItem="QKO-WD-I53" secondAttribute="bottom" constant="90" id="KY0-oM-lsS"/>
                             <constraint firstItem="QKO-WD-I53" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cwN-Ul-vXa"/>
                             <constraint firstItem="8mX-ow-5og" firstAttribute="height" secondItem="QKO-WD-I53" secondAttribute="height" id="mei-42-pgj"/>
                             <constraint firstItem="8mX-ow-5og" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sq1-VZ-OmF"/>
+                            <constraint firstItem="iDd-A6-d20" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6I-qk-qgc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ro4-D4-ClG"/>
@@ -83,16 +96,27 @@
                                     <constraint firstAttribute="width" constant="112" id="Glu-36-EIG"/>
                                     <constraint firstAttribute="height" constant="30" id="Naq-xk-dGK"/>
                                 </constraints>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelClicked:" destination="FLu-pH-1fs" eventType="touchUpInside" id="58x-TN-CSn"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rpc-1q-e0w">
+                                <rect key="frame" x="147" y="181" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ba8-tV-V8m"/>
+                                    <constraint firstAttribute="height" constant="80" id="c55-fb-uDT"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="b9K-oF-beJ" firstAttribute="centerX" secondItem="xQE-vA-8U1" secondAttribute="centerX" id="0Ig-Am-Ulq"/>
                             <constraint firstItem="cde-J6-cIF" firstAttribute="top" secondItem="xQE-vA-8U1" secondAttribute="top" constant="16" id="Bbe-go-H46"/>
+                            <constraint firstItem="Rpc-1q-e0w" firstAttribute="centerX" secondItem="xQE-vA-8U1" secondAttribute="centerX" id="Htq-Wm-nl4"/>
+                            <constraint firstItem="b9K-oF-beJ" firstAttribute="top" secondItem="Rpc-1q-e0w" secondAttribute="bottom" constant="49" id="g2a-N4-u7H"/>
                             <constraint firstItem="N3E-65-VRv" firstAttribute="top" secondItem="b9K-oF-beJ" secondAttribute="bottom" constant="44" id="hn6-Z4-Krs"/>
                             <constraint firstItem="cde-J6-cIF" firstAttribute="leading" secondItem="xQE-vA-8U1" secondAttribute="leading" constant="10" id="qPc-u9-6wF"/>
                             <constraint firstItem="N3E-65-VRv" firstAttribute="centerX" secondItem="xQE-vA-8U1" secondAttribute="centerX" id="s4Q-lN-tro"/>
@@ -100,6 +124,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertImage" destination="Rpc-1q-e0w" id="aZK-e4-Jtx"/>
                         <outlet property="alertTypeLbl" destination="b9K-oF-beJ" id="GQY-g4-MCg"/>
                     </connections>
                 </viewController>
@@ -126,4 +151,7 @@
             <point key="canvasLocation" x="120.8" y="-560.86956521739137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="loner-app-logo" width="82" height="34"/>
+    </resources>
 </document>

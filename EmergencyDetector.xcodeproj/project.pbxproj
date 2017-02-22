@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B968BDF11E5D590A00C57A1B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B968BDF01E5D590A00C57A1B /* AVFoundation.framework */; };
+		B968BDF41E5D5D4700C57A1B /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B968BDF31E5D5D4700C57A1B /* alarm.mp3 */; };
+		B9A17E1C1E5C6CBD001A85CD /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B9A17E1B1E5C6CBD001A85CD /* alarm.mp3 */; };
 		EB0F830B1E52D3F90045C119 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F830A1E52D3F90045C119 /* main.m */; };
 		EB0F83141E52D3F90045C119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83121E52D3F90045C119 /* Main.storyboard */; };
 		EB0F83161E52D3F90045C119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83151E52D3F90045C119 /* Assets.xcassets */; };
@@ -21,13 +24,13 @@
 		EB0F83531E52D3FA0045C119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0F83521E52D3FA0045C119 /* Assets.xcassets */; };
 		EB0F836A1E52DCF60045C119 /* AlertInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */; };
 		EB0F836D1E52DD380045C119 /* HomeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0F836C1E52DD380045C119 /* HomeInterfaceController.m */; };
+		EB30BB421E5B05DC0059D1B6 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB30BB411E5B05DC0059D1B6 /* HealthKit.framework */; };
 		EB876FEA1E542150009E7C3E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB876FE91E542150009E7C3E /* CoreMotion.framework */; };
 		EBB467DC1E56F75F0036E84B /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB467D91E56F75F0036E84B /* AlertViewController.m */; };
 		EBB467DD1E56F75F0036E84B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB467DB1E56F75F0036E84B /* HomeViewController.m */; };
 		EBB467DF1E570E880036E84B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB467DE1E570E880036E84B /* CoreLocation.framework */; };
 		EBB467E11E57147B0036E84B /* ExtensionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB467E01E57147B0036E84B /* ExtensionDelegate.m */; };
 		EBB467E41E5714C00036E84B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB467E31E5714C00036E84B /* AppDelegate.m */; };
-		EBB467E61E5722DC0036E84B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB467E51E5722DC0036E84B /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B968BDF01E5D590A00C57A1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B968BDF31E5D5D4700C57A1B /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		B9A17E1B1E5C6CBD001A85CD /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		EB0F83061E52D3F90045C119 /* EmergencyDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmergencyDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0F830A1E52D3F90045C119 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB0F83131E52D3F90045C119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,8 @@
 		EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertInterfaceController.m; sourceTree = "<group>"; };
 		EB0F836B1E52DD380045C119 /* HomeInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeInterfaceController.h; sourceTree = "<group>"; };
 		EB0F836C1E52DD380045C119 /* HomeInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeInterfaceController.m; sourceTree = "<group>"; };
+		EB30BB401E5AF67D0059D1B6 /* EmergencyDetector WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EmergencyDetector WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		EB30BB411E5B05DC0059D1B6 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		EB876FE91E542150009E7C3E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		EBB467D81E56F75F0036E84B /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
 		EBB467D91E56F75F0036E84B /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
@@ -123,7 +131,6 @@
 		EBB467E01E57147B0036E84B /* ExtensionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtensionDelegate.m; path = "../../../Documents/Projects Cuelogic/WatchPOC/WatchPOC WatchKit Extension/ExtensionDelegate.m"; sourceTree = "<group>"; };
 		EBB467E21E5714C00036E84B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "../../../Documents/Projects Cuelogic/WatchPOC/WatchPOC/AppDelegate.h"; sourceTree = "<group>"; };
 		EBB467E31E5714C00036E84B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "../../../Documents/Projects Cuelogic/WatchPOC/WatchPOC/AppDelegate.m"; sourceTree = "<group>"; };
-		EBB467E51E5722DC0036E84B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B968BDF11E5D590A00C57A1B /* AVFoundation.framework in Frameworks */,
 				EBB467DF1E570E880036E84B /* CoreLocation.framework in Frameworks */,
 				EB876FEA1E542150009E7C3E /* CoreMotion.framework in Frameworks */,
 			);
@@ -154,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB467E61E5722DC0036E84B /* HealthKit.framework in Frameworks */,
+				EB30BB421E5B05DC0059D1B6 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +215,7 @@
 		EB0F83091E52D3F90045C119 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B9A17E1B1E5C6CBD001A85CD /* alarm.mp3 */,
 				EB0F830A1E52D3F90045C119 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -243,6 +252,7 @@
 		EB0F83461E52D3FA0045C119 /* EmergencyDetector WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				EB30BB401E5AF67D0059D1B6 /* EmergencyDetector WatchKit Extension.entitlements */,
 				EB0F83681E52DCF60045C119 /* AlertInterfaceController.h */,
 				EB0F83691E52DCF60045C119 /* AlertInterfaceController.m */,
 				EB0F836B1E52DD380045C119 /* HomeInterfaceController.h */,
@@ -251,6 +261,7 @@
 				EBB467E01E57147B0036E84B /* ExtensionDelegate.m */,
 				EB0F834F1E52D3FA0045C119 /* NotificationController.h */,
 				EB0F83501E52D3FA0045C119 /* NotificationController.m */,
+				B968BDF31E5D5D4700C57A1B /* alarm.mp3 */,
 				EB0F83521E52D3FA0045C119 /* Assets.xcassets */,
 				EB0F83541E52D3FA0045C119 /* Info.plist */,
 				EB0F83471E52D3FA0045C119 /* Supporting Files */,
@@ -269,7 +280,8 @@
 		EB876FE81E542150009E7C3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EBB467E51E5722DC0036E84B /* HealthKit.framework */,
+				B968BDF01E5D590A00C57A1B /* AVFoundation.framework */,
+				EB30BB411E5B05DC0059D1B6 /* HealthKit.framework */,
 				EBB467DE1E570E880036E84B /* CoreLocation.framework */,
 				EB876FE91E542150009E7C3E /* CoreMotion.framework */,
 			);
@@ -406,6 +418,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = FQWVPRQEN6;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -436,6 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A17E1C1E5C6CBD001A85CD /* alarm.mp3 in Resources */,
 				EB0F83191E52D3F90045C119 /* LaunchScreen.storyboard in Resources */,
 				EB0F83161E52D3F90045C119 /* Assets.xcassets in Resources */,
 				EB0F83141E52D3F90045C119 /* Main.storyboard in Resources */,
@@ -469,6 +487,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B968BDF41E5D5D4700C57A1B /* alarm.mp3 in Resources */,
 				EB0F83531E52D3FA0045C119 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +607,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -636,6 +656,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -661,6 +682,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "EmergencyDetector WatchKit Extension/EmergencyDetector WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = FQWVPRQEN6;
 				INFOPLIST_FILE = "EmergencyDetector WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -677,6 +699,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "EmergencyDetector WatchKit Extension/EmergencyDetector WatchKit Extension.entitlements";
 				DEVELOPMENT_TEAM = FQWVPRQEN6;
 				INFOPLIST_FILE = "EmergencyDetector WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -725,6 +748,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FQWVPRQEN6;
 				INFOPLIST_FILE = EmergencyDetector/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -738,6 +762,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FQWVPRQEN6;
 				INFOPLIST_FILE = EmergencyDetector/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>EmergencyDetector WatchKit App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>EmergencyDetector WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>EmergencyDetector.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>EB0F83051E52D3F90045C119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB0F831E1E52D3F90045C119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB0F83291E52D3FA0045C119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB0F83321E52D3FA0045C119</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
